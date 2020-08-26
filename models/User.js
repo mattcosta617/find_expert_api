@@ -16,7 +16,15 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: [true, 'Password is required'],
-    },  
+    }, 
+    expert: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Expert",
+    },
+    projects: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Project",
+    }],
     createdAt: {
         type: Date,
         default: Date.now,
