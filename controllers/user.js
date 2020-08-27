@@ -41,7 +41,14 @@ const register = async (req, res) => {
 
         const hash = await bcrypt.hash(req.body.password, salt);
 
-        await db.User.create({ ...req.body, password: hash });
+        const newUser = await db.User.create({ ...req.body, password: hash });
+
+        const payload = {id: newUser._id};
+        const secret = process.env.JWT_SECRET;
+        const expiration = {expiresIn: "1h"};
+
+        const token = await jwt.sign(payload, secret, expiration);
+
 
         return res.status(201).json({status: 201, message: "Success!"});
     }
