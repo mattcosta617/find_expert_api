@@ -29,7 +29,7 @@ const update = (req, res) => {
         if (err) console.log('Error in Experts#update: ', err);
 
         if (!updatedExpert) {
-            res.status(400).json({message: `Could not find game with id ${req.params.id}`});
+            res.status(400).json({message: `Could not find expert with id ${req.params.id}`});
         }
 
         res.json(updatedExpert);

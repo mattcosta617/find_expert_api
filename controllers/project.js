@@ -29,7 +29,7 @@ const update = (req, res) => {
         if (err) console.log('Error in Projects#update: ', err);
 
         if (!updatedProject) {
-            res.status(400).json({message: `Could not find game with id ${req.params.id}`});
+            res.status(400).json({message: `Could not find project with id ${req.params.id}`});
         }
 
         res.json(updatedProject);
