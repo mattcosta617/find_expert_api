@@ -101,7 +101,7 @@ const login = async (req, res) => {
 
 const verify = async (req, res) => {
     const token = req.headers['authorization'];
-    // console.log(req.headers)
+
     console.log('Verify Token ----> ', token);
 
     jwt.verify(token, process.env.JWT_SECRET, (err, decodedUser) => {
