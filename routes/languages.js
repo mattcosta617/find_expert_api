@@ -4,7 +4,7 @@ const authRequired = require('../middleware/authRequired');
 
 router.get('/', ctrl.index);
 router.get('/:id', ctrl.show);
-router.post('/', authRequired, ctrl.create);
+router.post('/', ctrl.create);
 router.put('/:id', authRequired, ctrl.update);
 router.delete('/:id', authRequired, ctrl.destroy);
 

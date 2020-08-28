@@ -17,6 +17,7 @@ const show = (req, res) => {
 };
 
 const create = (req, res) => {
+    console.log(req.body, "This is the console log")
     db.Project.create(req.body, (err, savedProject) => {
         if (err) console.log('Error in Projects#create: ', err);
 
